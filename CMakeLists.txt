@@ -11,7 +11,8 @@ include_directories(${CMAKE_SOURCE_DIR}/tests)
 add_subdirectory(${CMAKE_SOURCE_DIR}/third_party/tabulate)
 
 file(GLOB SOURCE_FILES src/*.cpp)
+file(GLOB TEST_SOURCE_FILES tests/*.cpp)
 
 # add executable and link libraries
-add_executable(${PROJECT_NAME} ${SOURCE_FILES})
+add_executable(${PROJECT_NAME} ${SOURCE_FILES} ${TEST_SOURCE_FILES})
 target_link_libraries(${PROJECT_NAME} PRIVATE tabulate)
